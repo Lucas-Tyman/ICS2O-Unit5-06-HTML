@@ -1,19 +1,43 @@
 // Created by: Lucas Tyman
-// Created on: Apr 2022
+// Created on: May 2022
 // This file contains the JS functions for index.html
+
+'use strict'
 
 /**
  * Check service worker.
  */
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Template/sw.js", {
-    scope: "/ICS2O-PWA-Template/",
+ if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICS2O-Unit5-06-HTML/sw.js", {
+    scope: "/ICS2O-Unit5-06-HTML/",
   })
 }
 
 /**
- * This function displays an alert.
+ * This function performs a loop.
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function calculate() {
+  // input
+  var firstInteger = document.getElementById("first-integer").value
+  var secondInteger = document.getElementById("second-integer").value
+
+  // process
+  let counter = 0
+  var answer = 0
+  var firstIntegerAsInt = parseInt(firstInteger)
+  var secondIntegerAsInt = parseInt(secondInteger)
+
+  if (secondIntegerAsInt < 0) {
+    temp = firstIntegerAsInt
+    firstIntegerAsInt = secondIntegerAsInt
+    secondIntegerAsInt = temp
+  }
+  while (counter < secondIntegerAsInt) {
+    console.log("Once through loop:" + counter)
+    answer += firstIntegerAsInt
+    counter++
+  }
+
+  // output
+  document.getElementById("answer").innerHTML = "The answer is " + (answer)
 }

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!--- ICS2O-My first PWA -->
+<!--- ICS2O-Unit5-06-HTML -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="My first PWA" />
+    <meta name="description" content="Calculations" />
     <meta name="keywords" content="mths, ics2o" />
-    <meta name="author" content="Lucas Tyman" />
+    <meta name="author" content="Kenny Le" />
     <meta name="theme-color" content="#FFFFFF" />
-    <link rel="canonical" href="https://https://Lucas-Tyman.github.io/ICS2O-PWA-Template//" />
-    <link rel="manifest" href="/ICS2O-PWA-Template/manifest.webmanifest" />
+    <link rel="canonical" href="https://https://Kenny-Le-281.github.io/ICS2O-Unit5-06-HTML//" />
+    <link rel="manifest" href="/ICS2O-Unit5-06-HTML/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously -->
@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <title>GitHub page as PWA template</title>
+    <title>Calculations</title>
   </head>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -26,23 +26,40 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+          <span class="mdl-layout-title">Calculations</span>
         </div>
       </header>
       <main class="mdl-layout__content">
         <p></p>
-        <img src="./images/temperature.svg" alt="temperature" width="25%" height="25%">
+        <img src="./images/add.svg" alt="add" width="35%" height="35%">
         <p></p>
+        <h4>Multiplication by repeated addition</h4>
+        <!-- Numeric Textfield 1 -->
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="number" step="1" pattern="-?[0-9]*(\.[0-9]+)?" id="first-integer">
+            <label class="mdl-textfield__label" for="first-integer">First Integer</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <!-- Numeric Textfield 2 -->
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" step="1" pattern="-?[0-9]*(\.[0-9]+)?" id="second-integer">
+            <label class="mdl-textfield__label" for="second-integer">Second Integer</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <br>
         <!-- Raised button with ripple -->
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
-        >
-          Say "Hello, World!"
+          onclick="calculate()">
+          Calculate
         </button>
         <!-- basic text -->
         <p></p>
-        <div id="hello-world"></div>
+        <div id="answer"></div>
       </main>
     </div>
   </body>
